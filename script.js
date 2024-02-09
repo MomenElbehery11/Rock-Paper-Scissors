@@ -1,5 +1,5 @@
 const gameContainer = document.querySelector(".container"),
- userResult = document.querySelector(".user_result img"),
+ MomenResult = document.querySelector(".Momen_result img"),
  cpuResult = document.querySelector(".cpu_result img"),
  result = document.querySelector(".result"),
  optionImages = document.querySelectorAll(".option_image");
@@ -10,7 +10,7 @@ const c1=document.querySelector('#c');
     image.addEventListener("click",(e) => {
         image.classList.add("active");
 
-        userResult.src=cpuResult.src="images/rock.png";
+        MomenResult.src=cpuResult.src="images/rock.png";
         result.textContent="Wait...";
 
         optionImages.forEach((image2,index2) => {
@@ -21,7 +21,7 @@ const c1=document.querySelector('#c');
         let time=setTimeout(() => {
         gameContainer.classList.remove("start");
             let imageSrc=e.target.querySelector("img").src;
-            userResult.src=imageSrc;
+            MomenResult.src=imageSrc;
     
             let randomNumber=Math.floor(Math.random()*3);
             let cpuImages=["images/rock.png","images/paper.png","images/scissors.png"];
@@ -29,21 +29,21 @@ const c1=document.querySelector('#c');
             cpuResult.src=cpuImages[randomNumber];
     
             let cpuValue=["R","P","S"][randomNumber];
-            let userValue=["R","P","S"][index];
+            let MomenValue=["R","P","S"][index];
     
             let outcomes={
                 RR:"Draw",
                 RP:"Cpu",
-                RS:"User",
+                RS:"Momen",
                 PP:"Draw",
-                PR:"User",
+                PR:"Momen",
                 PS:"Cpu",
                 SS:"Draw",
                 SR:"Cpu",
-                SP:"User",
+                SP:"Momen",
             };
-            let outComeValue=outcomes[userValue+cpuValue];
-            if(outComeValue==="User"){
+            let outComeValue=outcomes[MomenValue+cpuValue];
+            if(outComeValue==="Momen"){
                 u1.innerText=+u1.innerText+ 1;
             }
             else if(outComeValue==="Cpu")
@@ -54,7 +54,7 @@ const c1=document.querySelector('#c');
                 c1.innerText=+c1.innerText+ 1;
                 u1.innerText=+u1.innerText+ 1;
             }
-            result.textContent=userValue===cpuValue? "Match Draw": `${outComeValue} Won!`;
+            result.textContent=MomenValue===cpuValue? "Match Draw": `${outComeValue} Won!`;
         }, 2500);
 
     });
