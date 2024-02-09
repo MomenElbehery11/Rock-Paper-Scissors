@@ -45,12 +45,10 @@ const c1=document.querySelector('#c');
             let outComeValue=outcomes[userValue+cpuValue];
             if(outComeValue==="User"){
                 u1.innerText=+u1.innerText+ 1;
-                console.log("uuuu");
             }
             else if(outComeValue==="Cpu")
             {
                 c1.innerText=+c1.innerText+ 1;
-                console.log("ccc");
             }
             else{
                 c1.innerText=+c1.innerText+ 1;
