@@ -23,6 +23,8 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 .result_images {
     display: flex;
     column-gap:7rem;
+    position: relative;
+    left: 40px;
 }
 .cpu_result{
     transform: rotateY(-180deg);
@@ -67,4 +69,15 @@ pointer-events:none ;
 
 .container.start .option_images{
     pointer-events: none;
+}
+#u{
+    color:#7d2ae8;
+    position: relative;
+    left:50px;
+}
+#c{
+    color:#7d2ae8;
+    transform: rotateY(-180deg);
+    position: relative;
+    right:50px;
 }
