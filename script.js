@@ -3,6 +3,8 @@ const gameContainer = document.querySelector(".container"),
  cpuResult = document.querySelector(".cpu_result img"),
  result = document.querySelector(".result"),
  optionImages = document.querySelectorAll(".option_image");
+const u1=document.querySelector('#u');
+const c1=document.querySelector('#c');
 
  optionImages.forEach((image,index)=>{
     image.addEventListener("click",(e) => {
@@ -40,10 +42,22 @@ const gameContainer = document.querySelector(".container"),
                 SR:"Cpu",
                 SP:"User",
             };
-    
             let outComeValue=outcomes[userValue+cpuValue];
-    
+            if(outComeValue==="User"){
+                u1.innerText=+u1.innerText+ 1;
+                console.log("uuuu");
+            }
+            else if(outComeValue==="Cpu")
+            {
+                c1.innerText=+c1.innerText+ 1;
+                console.log("ccc");
+            }
+            else{
+                c1.innerText=+c1.innerText+ 1;
+                u1.innerText=+u1.innerText+ 1;
+            }
             result.textContent=userValue===cpuValue? "Match Draw": `${outComeValue} Won!`;
         }, 2500);
+
     });
  });
